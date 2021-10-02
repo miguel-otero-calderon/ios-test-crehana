@@ -25,6 +25,13 @@
 		4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9C9270877FE00508799 /* CourseViewModel.swift */; };
 		4CFAB9CD27088C9000508799 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9CB27088C9000508799 /* CourseTableViewCell.swift */; };
 		4CFAB9CE27088C9000508799 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFAB9CC27088C9000508799 /* CourseTableViewCell.xib */; };
+		4CFAB9D527090B6D00508799 /* CoursePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */; };
+		4CFAB9D727090BB500508799 /* CoursePlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */; };
+		4CFAB9DA27090D8400508799 /* CoursePlayerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */; };
+		4CFAB9DC27090FCD00508799 /* CoursePlayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */; };
+		4CFAB9DE27090FF600508799 /* CoursePlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */; };
+		4CFAB9E02709103C00508799 /* CoursePlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */; };
+		4CFAB9E22709126400508799 /* CoursePlayerLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */; };
 		4D549C5EB32B88B4F5098BE2 /* Pods_ios_test_crehana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +57,13 @@
 		4CFAB9C9270877FE00508799 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		4CFAB9CB27088C9000508799 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		4CFAB9CC27088C9000508799 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
+		4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerView.swift; sourceTree = "<group>"; };
+		4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerViewModel.swift; sourceTree = "<group>"; };
+		4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerEndPoint.swift; sourceTree = "<group>"; };
+		4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerRequest.swift; sourceTree = "<group>"; };
+		4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerResponse.swift; sourceTree = "<group>"; };
+		4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerService.swift; sourceTree = "<group>"; };
+		4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerLesson.swift; sourceTree = "<group>"; };
 		CE5399A55F935F9A122E8675 /* Pods-ios-test-crehana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-test-crehana.release.xcconfig"; path = "Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana.release.xcconfig"; sourceTree = "<group>"; };
 		FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_test_crehana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,9 +101,10 @@
 		4C14B632270843F300AC7FFB /* ios-test-crehana */ = {
 			isa = PBXGroup;
 			children = (
-				4CFAB9C327086D7100508799 /* Course */,
 				4C14B633270843F300AC7FFB /* AppDelegate.swift */,
 				4C14B635270843F300AC7FFB /* SceneDelegate.swift */,
+				4CFAB9C327086D7100508799 /* Course */,
+				4CFAB9D02709023D00508799 /* CoursePlayer */,
 				4C21A6F12708523100FF5567 /* ScreenError */,
 				4C21A6EE2708520900FF5567 /* Extension */,
 				4C21A6E127084C6800FF5567 /* Networking */,
@@ -105,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				4C21A6E527084D0100FF5567 /* Course */,
+				4CFAB9D827090D5B00508799 /* CoursePlayer */,
 				4C21A6E227084CA300FF5567 /* EndPoint */,
 			);
 			path = Networking;
@@ -180,6 +196,51 @@
 				4CFAB9C7270874CF00508799 /* Course.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4CFAB9D02709023D00508799 /* CoursePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D32709028600508799 /* View */,
+				4CFAB9D22709027600508799 /* Model */,
+				4CFAB9D12709026D00508799 /* ViewModel */,
+			);
+			path = CoursePlayer;
+			sourceTree = "<group>";
+		};
+		4CFAB9D12709026D00508799 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4CFAB9D22709027600508799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CFAB9D32709028600508799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CFAB9D827090D5B00508799 /* CoursePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */,
+				4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */,
+				4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */,
+				4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */,
+			);
+			path = CoursePlayer;
 			sourceTree = "<group>";
 		};
 		814DBE6BA7743846930A411F /* Frameworks */ = {
@@ -315,17 +376,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFAB9D727090BB500508799 /* CoursePlayerViewModel.swift in Sources */,
 				4CFAB9C8270874CF00508799 /* Course.swift in Sources */,
 				4C21A6ED27084EF500FF5567 /* CourseService.swift in Sources */,
+				4CFAB9E02709103C00508799 /* CoursePlayerService.swift in Sources */,
+				4CFAB9DE27090FF600508799 /* CoursePlayerResponse.swift in Sources */,
+				4CFAB9D527090B6D00508799 /* CoursePlayerView.swift in Sources */,
 				4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */,
 				4C21A6E927084E0800FF5567 /* CourseRequest.swift in Sources */,
 				4C14B638270843F300AC7FFB /* CourseView.swift in Sources */,
+				4CFAB9DC27090FCD00508799 /* CoursePlayerRequest.swift in Sources */,
 				4C21A6E727084D3500FF5567 /* CourseEndPoint.swift in Sources */,
+				4CFAB9DA27090D8400508799 /* CoursePlayerEndPoint.swift in Sources */,
 				4CFAB9CD27088C9000508799 /* CourseTableViewCell.swift in Sources */,
 				4C14B634270843F300AC7FFB /* AppDelegate.swift in Sources */,
 				4C21A6EB27084EA000FF5567 /* CourseResponse.swift in Sources */,
 				4C21A6F52708530D00FF5567 /* MyError.swift in Sources */,
 				4C21A6E427084CB000FF5567 /* EndPoint.swift in Sources */,
+				4CFAB9E22709126400508799 /* CoursePlayerLesson.swift in Sources */,
 				4C21A6F3270852EF00FF5567 /* ScreenErrorView.swift in Sources */,
 				4C14B636270843F300AC7FFB /* SceneDelegate.swift in Sources */,
 				4C21A6F02708521900FF5567 /* UiViewController+Extension.swift in Sources */,

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Course View-->
+        <!--Mis Cursos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CourseView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mis Cursos" id="BYZ-38-t0r" customClass="CourseView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +156,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVi-Xm-Ehi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.7246376811595" y="60.9375"/>
+            <point key="canvasLocation" x="1665" y="38"/>
+        </scene>
+        <!--Course Player View-->
+        <scene sceneID="SiF-hJ-bv2">
+            <objects>
+                <viewController storyboardIdentifier="CoursePlayerView" id="aPp-g0-nv7" customClass="CoursePlayerView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HNU-4u-gGS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sta-rD-Vb1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="4ia-oi-GMm"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eov-nH-Zus">
+                                <rect key="frame" x="78" y="237" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D5J-AH-X3G"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sta-rD-Vb1" firstAttribute="top" secondItem="D5J-AH-X3G" secondAttribute="top" id="faf-kg-4x0"/>
+                            <constraint firstItem="Sta-rD-Vb1" firstAttribute="leading" secondItem="D5J-AH-X3G" secondAttribute="leading" id="jWo-DO-ubP"/>
+                            <constraint firstItem="D5J-AH-X3G" firstAttribute="trailing" secondItem="Sta-rD-Vb1" secondAttribute="trailing" id="zth-NH-Sxj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVH-mC-6vJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Srq-TY-kFu">
@@ -179,5 +214,8 @@
     <resources>
         <image name="error-500" width="214" height="178.5"/>
         <image name="error-close" width="17" height="17"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

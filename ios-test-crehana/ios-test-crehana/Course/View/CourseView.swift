@@ -90,4 +90,14 @@ extension CourseView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 104
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let course = self.courses[indexPath.row]        
+        DispatchQueue.main.async {
+            let coursePlayerView = self.storyboard?.instantiateViewController(withIdentifier: "CoursePlayerView") as! CoursePlayerView
+            coursePlayerView.course = course
+            self.navigationController?.pushViewController(coursePlayerView, animated: true)
+        }
+    }
 }

@@ -24,6 +24,7 @@ class CourseViewModel: CourseViewModelProtocol {
     
     var courses: [Course]
     var service: CourseServiceProtocol
+    var delegate: CourseViewModelDelegate?
     
     private let cachePromoImage = NSCache<NSString, UIImage>()
     
@@ -72,8 +73,4 @@ class CourseViewModel: CourseViewModelProtocol {
             }
         }
     }
-    
-    var delegate: CourseViewModelDelegate?
-    
-    
 }
