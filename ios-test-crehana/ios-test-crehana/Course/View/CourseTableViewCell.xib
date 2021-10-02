@@ -39,7 +39,7 @@
                         <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqb-QQ-bu7" userLabel="Line View">
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqb-QQ-bu7" userLabel="Line View">
                         <rect key="frame" x="15" y="102.5" width="336" height="0.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
