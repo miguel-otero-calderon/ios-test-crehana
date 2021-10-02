@@ -8,10 +8,10 @@
 import Foundation
 import Alamofire
 
-protocol CourseServiceType {
+protocol CourseServiceProtocol{
     func getCourses(request: CourseRequest?, completion: @escaping ([CourseResponse]?, Error?) -> Void)
 }
-class CourseService: CourseServiceType {
+class CourseService: CourseServiceProtocol {
     
     func getCourses(request: CourseRequest?, completion: @escaping ([CourseResponse]?, Error?) -> Void) {
         AF.request(

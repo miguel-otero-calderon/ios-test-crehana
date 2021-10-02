@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-// MARK: - WelcomeElement
+// MARK: - CourseResponse
 struct CourseResponse: Codable {
     let id: String?
     let title: String?

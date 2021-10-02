@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C14B634270843F300AC7FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B633270843F300AC7FFB /* AppDelegate.swift */; };
 		4C14B636270843F300AC7FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B635270843F300AC7FFB /* SceneDelegate.swift */; };
-		4C14B638270843F300AC7FFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B637270843F300AC7FFB /* ViewController.swift */; };
+		4C14B638270843F300AC7FFB /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B637270843F300AC7FFB /* CourseView.swift */; };
 		4C14B63B270843F300AC7FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B639270843F300AC7FFB /* Main.storyboard */; };
 		4C14B63D270843F500AC7FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B63C270843F500AC7FFB /* Assets.xcassets */; };
 		4C14B640270843F500AC7FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B63E270843F500AC7FFB /* LaunchScreen.storyboard */; };
@@ -21,6 +21,8 @@
 		4C21A6F02708521900FF5567 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6EF2708521900FF5567 /* UiViewController+Extension.swift */; };
 		4C21A6F3270852EF00FF5567 /* ScreenErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6F2270852EF00FF5567 /* ScreenErrorView.swift */; };
 		4C21A6F52708530D00FF5567 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6F42708530D00FF5567 /* MyError.swift */; };
+		4CFAB9C8270874CF00508799 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9C7270874CF00508799 /* Course.swift */; };
+		4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9C9270877FE00508799 /* CourseViewModel.swift */; };
 		4D549C5EB32B88B4F5098BE2 /* Pods_ios_test_crehana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +31,7 @@
 		4C14B630270843F300AC7FFB /* ios-test-crehana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-test-crehana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C14B633270843F300AC7FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C14B635270843F300AC7FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C14B637270843F300AC7FFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C14B637270843F300AC7FFB /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		4C14B63A270843F300AC7FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C14B63C270843F500AC7FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C14B63F270843F500AC7FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		4C21A6EF2708521900FF5567 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
 		4C21A6F2270852EF00FF5567 /* ScreenErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenErrorView.swift; sourceTree = "<group>"; };
 		4C21A6F42708530D00FF5567 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
+		4CFAB9C7270874CF00508799 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		4CFAB9C9270877FE00508799 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		CE5399A55F935F9A122E8675 /* Pods-ios-test-crehana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-test-crehana.release.xcconfig"; path = "Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana.release.xcconfig"; sourceTree = "<group>"; };
 		FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_test_crehana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,12 +83,12 @@
 		4C14B632270843F300AC7FFB /* ios-test-crehana */ = {
 			isa = PBXGroup;
 			children = (
+				4CFAB9C327086D7100508799 /* Course */,
 				4C14B633270843F300AC7FFB /* AppDelegate.swift */,
 				4C14B635270843F300AC7FFB /* SceneDelegate.swift */,
 				4C21A6F12708523100FF5567 /* ScreenError */,
 				4C21A6EE2708520900FF5567 /* Extension */,
 				4C21A6E127084C6800FF5567 /* Networking */,
-				4C14B637270843F300AC7FFB /* ViewController.swift */,
 				4C14B639270843F300AC7FFB /* Main.storyboard */,
 				4C14B63C270843F500AC7FFB /* Assets.xcassets */,
 				4C14B63E270843F500AC7FFB /* LaunchScreen.storyboard */,
@@ -136,6 +140,40 @@
 				4C21A6F42708530D00FF5567 /* MyError.swift */,
 			);
 			path = ScreenError;
+			sourceTree = "<group>";
+		};
+		4CFAB9C327086D7100508799 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C42708748000508799 /* View */,
+				4CFAB9C6270874A600508799 /* Model */,
+				4CFAB9C52708749300508799 /* ViewModel */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		4CFAB9C42708748000508799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C14B637270843F300AC7FFB /* CourseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CFAB9C52708749300508799 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C9270877FE00508799 /* CourseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4CFAB9C6270874A600508799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C7270874CF00508799 /* Course.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		814DBE6BA7743846930A411F /* Frameworks */ = {
@@ -270,9 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CFAB9C8270874CF00508799 /* Course.swift in Sources */,
 				4C21A6ED27084EF500FF5567 /* CourseService.swift in Sources */,
+				4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */,
 				4C21A6E927084E0800FF5567 /* CourseRequest.swift in Sources */,
-				4C14B638270843F300AC7FFB /* ViewController.swift in Sources */,
+				4C14B638270843F300AC7FFB /* CourseView.swift in Sources */,
 				4C21A6E727084D3500FF5567 /* CourseEndPoint.swift in Sources */,
 				4C14B634270843F300AC7FFB /* AppDelegate.swift in Sources */,
 				4C21A6EB27084EA000FF5567 /* CourseResponse.swift in Sources */,
