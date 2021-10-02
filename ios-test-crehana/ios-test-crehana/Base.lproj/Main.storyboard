@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MuseoSans-300.otf">
+            <string>MuseoSans-300</string>
+        </array>
+        <array key="MuseoSans_700.otf">
+            <string>MuseoSans-700</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="68"/>
+        </scene>
+        <!--Screen Error View-->
+        <scene sceneID="cNW-aJ-lkq">
+            <objects>
+                <viewController storyboardIdentifier="ScreenErrorView" modalPresentationStyle="fullScreen" id="tgK-qA-vJZ" customClass="ScreenErrorView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h15-yk-zsd" userLabel="View Body">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gew-k3-MEg" userLabel="closeButton">
+                                <rect key="frame" x="357" y="40" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="SVd-zJ-5NR"/>
+                                    <constraint firstAttribute="width" constant="17" id="dgZ-zd-DKX"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="error-close"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="tgK-qA-vJZ" eventType="touchUpInside" id="D0l-Tl-afy"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error-500" translatesAutoresizingMaskIntoConstraints="NO" id="SjM-E3-O6l">
+                                <rect key="frame" x="71" y="67.5" width="272" height="246.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="246.58000000000001" id="6nN-L8-MGm"/>
+                                    <constraint firstAttribute="width" constant="272" id="TLF-Ah-6wt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Oh no! Ocurrió un problema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-Je-qMa">
+                                <rect key="frame" x="97.5" y="337.5" width="219" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="Oqp-Qd-RIR"/>
+                                    <constraint firstAttribute="height" constant="20" id="PNs-br-J2T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MuseoSans-700" family="Museo Sans" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, vuelve a intentarlo. Estamos trabajando para darte la mejor experiencia." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGk-Qt-7Pa">
+                                <rect key="frame" x="80" y="381.5" width="254" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="pOa-0e-AI1"/>
+                                    <constraint firstAttribute="height" constant="55" id="x0R-rl-YUl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="14"/>
+                                <color key="textColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znk-Ib-13e">
+                                <rect key="frame" x="157" y="458.5" width="100" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bCJ-Pv-3ik"/>
+                                    <constraint firstAttribute="height" constant="34" id="jQ2-k6-fz7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <state key="normal" title="Aceptar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButton:" destination="tgK-qA-vJZ" eventType="touchUpInside" id="srW-JY-2yl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4O8-Il-aMR"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Znk-Ib-13e" firstAttribute="centerX" secondItem="h15-yk-zsd" secondAttribute="centerX" id="3qR-BG-OUE"/>
+                            <constraint firstItem="DGk-Je-qMa" firstAttribute="top" secondItem="SjM-E3-O6l" secondAttribute="bottom" constant="23.489999999999998" id="42L-Cy-hIe"/>
+                            <constraint firstItem="DGk-Je-qMa" firstAttribute="centerX" secondItem="h15-yk-zsd" secondAttribute="centerX" id="4gn-aH-y0l"/>
+                            <constraint firstItem="SjM-E3-O6l" firstAttribute="top" secondItem="h15-yk-zsd" secondAttribute="top" constant="67.549999999999997" id="G6w-X4-ufc"/>
+                            <constraint firstAttribute="trailing" secondItem="gew-k3-MEg" secondAttribute="trailing" constant="40" id="HZI-a0-lhM"/>
+                            <constraint firstItem="Znk-Ib-13e" firstAttribute="top" secondItem="fGk-Qt-7Pa" secondAttribute="bottom" constant="21.969999999999999" id="ZAZ-3z-XC2"/>
+                            <constraint firstItem="fGk-Qt-7Pa" firstAttribute="top" secondItem="DGk-Je-qMa" secondAttribute="bottom" constant="23.690000000000001" id="j6j-u2-NGv"/>
+                            <constraint firstItem="SjM-E3-O6l" firstAttribute="centerX" secondItem="h15-yk-zsd" secondAttribute="centerX" id="qD0-W6-dat"/>
+                            <constraint firstItem="fGk-Qt-7Pa" firstAttribute="centerX" secondItem="h15-yk-zsd" secondAttribute="centerX" id="sDc-Bf-WZd"/>
+                            <constraint firstItem="gew-k3-MEg" firstAttribute="top" secondItem="h15-yk-zsd" secondAttribute="top" constant="40" id="xGl-aD-1c7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="gew-k3-MEg" id="i6f-V1-WAh"/>
+                        <outlet property="messageLabel" destination="fGk-Qt-7Pa" id="FZF-O6-Hnr"/>
+                        <outlet property="okButton" destination="Znk-Ib-13e" id="zSR-2T-ccE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVi-Xm-Ehi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="error-500" width="214" height="178.5"/>
+        <image name="error-close" width="17" height="17"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
