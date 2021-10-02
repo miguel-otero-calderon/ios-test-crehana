@@ -9,14 +9,25 @@ import UIKit
 
 class CourseView: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var viemModel: CourseViewModelProtocol = CourseViewModel(service: CourseService())
+    var courses: [Course] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        viemModel.delegate = self
-        viemModel.getCourses()
+        self.tableView.register(
+            UINib(nibName: "CourseTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "CourseTableViewCell")
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.viemModel.delegate = self
+        self.viemModel.getCourses()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +43,51 @@ class CourseView: UIViewController {
 
 extension CourseView: CourseViewModelDelegate {
     func getCourses(courses: [Course]?, error: Error?) {
+        
+        self.courses = []
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+        }
+        
+        if let error = error {
+            self.showError(message: error.localizedDescription)
+            return
+        }
+    
         if let courses = courses {
-            print(courses)
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
         }
     }
 }
 
+extension CourseView: UITableViewDataSource {    
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.courses.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let courseCell = self.tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell", for: indexPath) as? CourseTableViewCell
+        
+        let course = self.courses[indexPath.row]
+        courseCell?.configure(course: course)
+        
+        return courseCell!
+    }
+}
+
+extension CourseView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 104
+    }
+}

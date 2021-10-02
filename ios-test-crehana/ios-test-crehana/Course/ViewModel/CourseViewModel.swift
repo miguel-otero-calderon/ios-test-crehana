@@ -26,7 +26,6 @@ class CourseViewModel: CourseViewModelProtocol {
     var service: CourseServiceProtocol
     
     private let cachePromoImage = NSCache<NSString, UIImage>()
-    private let cacheProfessorImage = NSCache<NSString, UIImage>()
     
     init(service: CourseServiceProtocol) {
         self.service = service
@@ -61,23 +60,6 @@ class CourseViewModel: CourseViewModelProtocol {
                                         course.promoImage = image
                                         print("SERVICE: \(course.id)")
                                         self?.cachePromoImage.setObject(image, forKey: id)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                    if let cacheImage = self?.cacheProfessorImage.object(forKey: id) {
-                        course.professorImage = cacheImage
-                        print("CACHE PROFESSOR: \(course.id)")
-                    } else {
-                        if let professorImage = courseResponse.professorImageURL {
-                            if let urlProfessorImage = URL(string: professorImage) {
-                                if let dataProfessorImage = try? Data(contentsOf: urlProfessorImage) {
-                                    if let image = UIImage(data: dataProfessorImage) {
-                                        course.professorImage = image
-                                        print("SERVICE PROFESSOR: \(course.id)")
-                                        self?.cacheProfessorImage.setObject(image, forKey: id)
                                     }
                                 }
                             }

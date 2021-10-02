@@ -13,7 +13,6 @@ struct Course {
     let title: String
     var promoImage: UIImage?
     let professorFullName: String
-    var professorImage: UIImage?
     
     init(courseResponse: CourseResponse) {
         if let id = courseResponse.id {
@@ -35,6 +34,5 @@ struct Course {
         }
         
         self.promoImage = nil
-        self.professorImage = nil
     }
 }

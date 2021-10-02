@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLj-z7-BPM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -21,31 +20,32 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CourseView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myK-EM-n2x" userLabel="Content">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis Cursos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ont-6a-gJh">
-                                        <rect key="frame" x="15" y="30" width="384" height="53"/>
+                                        <rect key="frame" x="15" y="30" width="345" height="53"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZTS-Jg-sCN">
-                                        <rect key="frame" x="15" y="88" width="384" height="681"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="88" width="375" height="530"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ont-6a-gJh" firstAttribute="top" secondItem="myK-EM-n2x" secondAttribute="top" constant="30" id="2dx-W1-eMd"/>
                                     <constraint firstAttribute="trailing" secondItem="ont-6a-gJh" secondAttribute="trailing" constant="15" id="Q8z-OJ-rj8"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZTS-Jg-sCN" secondAttribute="trailing" constant="15" id="WOC-aQ-9Ta"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZTS-Jg-sCN" secondAttribute="trailing" id="WOC-aQ-9Ta"/>
                                     <constraint firstAttribute="bottom" secondItem="ZTS-Jg-sCN" secondAttribute="bottom" constant="5" id="fry-Fn-NNl"/>
                                     <constraint firstItem="ZTS-Jg-sCN" firstAttribute="top" secondItem="ont-6a-gJh" secondAttribute="bottom" constant="5" id="q3b-ZS-eKl"/>
-                                    <constraint firstItem="ZTS-Jg-sCN" firstAttribute="leading" secondItem="myK-EM-n2x" secondAttribute="leading" constant="15" id="wAP-lL-wEZ"/>
+                                    <constraint firstItem="ZTS-Jg-sCN" firstAttribute="leading" secondItem="myK-EM-n2x" secondAttribute="leading" id="wAP-lL-wEZ"/>
                                     <constraint firstItem="ont-6a-gJh" firstAttribute="leading" secondItem="myK-EM-n2x" secondAttribute="leading" constant="15" id="ze4-Wl-ojF"/>
                                 </constraints>
                             </view>
@@ -60,21 +60,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="itI-4E-C2A"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZTS-Jg-sCN" id="Ly0-Xe-jsT"/>
+                        <outlet property="titleLabel" destination="ont-6a-gJh" id="drY-1y-eGM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807.24637681159425" y="70.3125"/>
+            <point key="canvasLocation" x="991" y="39"/>
         </scene>
         <!--Screen Error View-->
         <scene sceneID="cNW-aJ-lkq">
             <objects>
                 <viewController storyboardIdentifier="ScreenErrorView" modalPresentationStyle="fullScreen" id="tgK-qA-vJZ" customClass="ScreenErrorView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h15-yk-zsd" userLabel="View Body">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gew-k3-MEg" userLabel="closeButton">
-                                <rect key="frame" x="357" y="40" width="17" height="17"/>
+                                <rect key="frame" x="318" y="40" width="17" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="SVd-zJ-5NR"/>
                                     <constraint firstAttribute="width" constant="17" id="dgZ-zd-DKX"/>
@@ -85,7 +89,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error-500" translatesAutoresizingMaskIntoConstraints="NO" id="SjM-E3-O6l">
-                                <rect key="frame" x="71" y="67.5" width="272" height="246.5"/>
+                                <rect key="frame" x="51.5" y="67.5" width="272" height="246.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="246.58000000000001" id="6nN-L8-MGm"/>
@@ -93,7 +97,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Oh no! Ocurrió un problema" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-Je-qMa">
-                                <rect key="frame" x="97.5" y="337.5" width="219" height="20"/>
+                                <rect key="frame" x="78" y="337.5" width="219" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="219" id="Oqp-Qd-RIR"/>
                                     <constraint firstAttribute="height" constant="20" id="PNs-br-J2T"/>
@@ -103,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por favor, vuelve a intentarlo. Estamos trabajando para darte la mejor experiencia." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGk-Qt-7Pa">
-                                <rect key="frame" x="80" y="381.5" width="254" height="55"/>
+                                <rect key="frame" x="60.5" y="381.5" width="254" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="pOa-0e-AI1"/>
                                     <constraint firstAttribute="height" constant="55" id="x0R-rl-YUl"/>
@@ -113,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znk-Ib-13e">
-                                <rect key="frame" x="157" y="458.5" width="100" height="34"/>
+                                <rect key="frame" x="137.5" y="458.5" width="100" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="bCJ-Pv-3ik"/>
@@ -159,7 +163,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pLj-z7-BPM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kt1-G2-Nc8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -175,8 +179,5 @@
     <resources>
         <image name="error-500" width="214" height="178.5"/>
         <image name="error-close" width="17" height="17"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
