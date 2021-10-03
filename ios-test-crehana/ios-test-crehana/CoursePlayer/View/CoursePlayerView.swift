@@ -33,6 +33,7 @@ class CoursePlayerView: UIViewController {
         
         viewModel.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         
         guard let course = course else {
             return
@@ -40,39 +41,6 @@ class CoursePlayerView: UIViewController {
         let request = CoursePlayerRequest(courseId: course.id)
         viewModel.getLessons(request: request)
         configure()
-        
-        let url = URL(string: "https://crehana-videos.akamaized.net/outputs/trailer/89ef7d652e4549709347f89aa7be0f57/1f68b3fffd1641c0b03d1457a53808d4.m3u8")
-        player = AVPlayer(url: url!)
-        
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = .resize
-        
-        videoView.layer.addSublayer(playerLayer)
-        
-        player?.play()
-        
-        player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: [.new], context: nil)
-        
-        controlsVideoView.frame = videoView.frame
-        videoView.addSubview(controlsVideoView)
-        
-        controlsVideoView.addSubview(pauseButton)
-        pauseButton.centerXAnchor.constraint(equalTo: videoView.centerXAnchor).isActive = true
-        pauseButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
-        pauseButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
-        pauseButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        
-        controlsVideoView.addSubview(backButton)
-        backButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
-        backButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
-        backButton.leadingAnchor.constraint(equalTo: pauseButton.leadingAnchor, constant: -60).isActive = true
-        
-        controlsVideoView.addSubview(forwardButton)
-        forwardButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        forwardButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
-        forwardButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
-        forwardButton.trailingAnchor.constraint(equalTo: pauseButton.trailingAnchor, constant: 60).isActive = true
     }
     
     lazy var pauseButton: UIButton = {
@@ -118,7 +86,7 @@ class CoursePlayerView: UIViewController {
         let currenTime = CMTimeGetSeconds(player.currentTime())
         let newTime = currenTime + 15.0
         
-        let totalSeconds = CMTimeGetSeconds(duration) - 15.0
+        let totalSeconds = CMTimeGetSeconds(duration)
         if newTime < totalSeconds {
             let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
             player.seek(to: time)
@@ -182,6 +150,9 @@ class CoursePlayerView: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        guard let playerLayer = self.playerLayer else {
+            return
+        }
         playerLayer.frame = videoView.bounds
     }
     
@@ -216,12 +187,51 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
             return
         }
         
-        if let lessons = lessons {
-            self.lessons = lessons
-            print(self.lessons)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        guard let lessons = lessons, lessons.count > 0 else {
+            return
+        }
+        
+        self.lessons = lessons
+
+        guard let url = URL(string: self.lessons[0].url) else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+
+            self.player = AVPlayer(url: url)
+            
+            self.playerLayer = AVPlayerLayer(player: self.player)
+            self.playerLayer.videoGravity = .resize
+            
+            self.videoView.layer.addSublayer(self.playerLayer)
+            
+            self.player?.play()
+            
+            self.player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: [.new], context: nil)
+            
+            self.controlsVideoView.frame = self.videoView.frame
+            self.videoView.addSubview(self.controlsVideoView)
+            
+            self.controlsVideoView.addSubview(self.pauseButton)
+            self.pauseButton.centerXAnchor.constraint(equalTo: self.videoView.centerXAnchor).isActive = true
+            self.pauseButton.centerYAnchor.constraint(equalTo: self.videoView.centerYAnchor).isActive = true
+            self.pauseButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+            self.pauseButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
+            
+            self.controlsVideoView.addSubview(self.backButton)
+            self.backButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+            self.backButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
+            self.backButton.centerYAnchor.constraint(equalTo: self.videoView.centerYAnchor).isActive = true
+            self.backButton.leadingAnchor.constraint(equalTo: self.pauseButton.leadingAnchor, constant: -60).isActive = true
+            
+            self.controlsVideoView.addSubview(self.forwardButton)
+            self.forwardButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+            self.forwardButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
+            self.forwardButton.centerYAnchor.constraint(equalTo: self.videoView.centerYAnchor).isActive = true
+            self.forwardButton.trailingAnchor.constraint(equalTo: self.pauseButton.trailingAnchor, constant: 60).isActive = true
+            
+            self.tableView.reloadData()
         }
     }
 }
@@ -244,5 +254,18 @@ extension CoursePlayerView: UITableViewDataSource {
         lessonCell?.configure(lesson: lesson)
         
         return lessonCell!
+    }
+}
+
+extension CoursePlayerView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let lesson = self.lessons[indexPath.row]
+        let url = URL(string: lesson.url)
+        let playerItem = AVPlayerItem(url: url!)
+        player.replaceCurrentItem(with: playerItem)
+        player.play()
+        
     }
 }
