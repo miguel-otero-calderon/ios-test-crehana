@@ -17,9 +17,15 @@ class CoursePlayerView: UIViewController {
     @IBOutlet weak var teacherCourseLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var pauseImage: UIImageView!
+    @IBOutlet weak var back15: UIImageView!
+    @IBOutlet weak var forward15: UIImageView!    
+    
     var viewModel: CoursePlayerViewModelProtocol = CoursePlayerViewModel(service: CoursePlayerService())
     var lessons: [CoursePlayerLesson] = []
     var course: Course?
+    var player: AVPlayer!
+    var playerLayer: AVPlayerLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,23 @@ class CoursePlayerView: UIViewController {
         let request = CoursePlayerRequest(courseId: course.id)
         viewModel.getLessons(request: request)
         configure()
+        
+        let url = URL(string: "https://crehana-videos.akamaized.net/outputs/trailer/89ef7d652e4549709347f89aa7be0f57/1f68b3fffd1641c0b03d1457a53808d4.m3u8")
+        player = AVPlayer(url: url!)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resize
+        
+        videoView.layer.addSublayer(playerLayer)
+    }
+     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        player.play()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        playerLayer.frame = videoView.bounds
     }
     
     func configure() {
@@ -73,6 +96,7 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
         
         if let lessons = lessons {
             self.lessons = lessons
+            print(self.lessons)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
