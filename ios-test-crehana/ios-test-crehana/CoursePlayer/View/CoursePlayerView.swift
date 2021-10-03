@@ -17,15 +17,12 @@ class CoursePlayerView: UIViewController {
     @IBOutlet weak var teacherCourseLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var pauseImage: UIImageView!
-    @IBOutlet weak var back15: UIImageView!
-    @IBOutlet weak var forward15: UIImageView!    
-    
     var viewModel: CoursePlayerViewModelProtocol = CoursePlayerViewModel(service: CoursePlayerService())
     var lessons: [CoursePlayerLesson] = []
     var course: Course?
-    var player: AVPlayer!
+    @objc dynamic var player: AVPlayer?
     var playerLayer: AVPlayerLayer!
+    var isPlaying = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +33,6 @@ class CoursePlayerView: UIViewController {
         
         viewModel.delegate = self
         tableView.dataSource = self
-//        tableView.delegate = self        
         
         guard let course = course else {
             return
@@ -47,15 +43,77 @@ class CoursePlayerView: UIViewController {
         
         let url = URL(string: "https://crehana-videos.akamaized.net/outputs/trailer/89ef7d652e4549709347f89aa7be0f57/1f68b3fffd1641c0b03d1457a53808d4.m3u8")
         player = AVPlayer(url: url!)
+        
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resize
         
         videoView.layer.addSublayer(playerLayer)
+        
+        player?.play()
+        
+        player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: [.new], context: nil)
+        
+        controlsVideoView.frame = videoView.frame
+        videoView.addSubview(controlsVideoView)
+        
+        controlsVideoView.addSubview(pauseButton)
+        pauseButton.centerXAnchor.constraint(equalTo: videoView.centerXAnchor).isActive = true
+        pauseButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
+        pauseButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        pauseButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
     }
-     
+    
+    lazy var pauseButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "pause")
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.isHidden = true
+        
+        button.addTarget(self, action: #selector(pauseAction), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func pauseAction() {
+        if isPlaying {
+            player?.pause()
+            pauseButton.setImage(UIImage(named: "play"), for: .normal)
+        } else {
+            player?.play()
+            pauseButton.setImage(UIImage(named: "pause"), for: .normal)
+        }
+        isPlaying = !isPlaying
+    }
+    
+    let controlsVideoView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0, alpha: 1)
+        return view
+    }()
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "currentItem.loadedTimeRanges" {
+            controlsVideoView.backgroundColor = .clear
+            pauseButton.isHidden = false
+            isPlaying = true
+        }
+    }
+    
+    func getTimeString(time: CMTime) -> String {
+        let cmTimeGetSeconds = CMTimeGetSeconds(time)
+        let hours = Int(cmTimeGetSeconds/3600)
+        let minutes = Int(cmTimeGetSeconds/60) % 60
+        let seconds = Int(cmTimeGetSeconds.truncatingRemainder(dividingBy: 60))
+        if hours > 0 {
+            return String(format: "%i:%02i:%02i", arguments: [hours,minutes,seconds])
+        } else {
+            return String(format: "%02i:%02i", arguments: [minutes,seconds])
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        player.play()
     }
     
     override func viewDidLayoutSubviews() {

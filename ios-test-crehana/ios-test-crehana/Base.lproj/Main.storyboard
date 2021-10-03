@@ -273,11 +273,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="back15" destination="d4z-Ig-wWF" id="Hd4-Cp-PRx"/>
                         <outlet property="detailCourseView" destination="eov-nH-Zus" id="Rch-eO-a1K"/>
-                        <outlet property="forward15" destination="ubz-6G-1DA" id="I6j-VL-Umf"/>
                         <outlet property="imageCourseView" destination="j9X-60-vc6" id="aDn-o5-ACz"/>
-                        <outlet property="pauseImage" destination="qUk-As-qd5" id="HNw-Oi-43o"/>
                         <outlet property="tableView" destination="AF4-UA-I2e" id="87n-TH-cvt"/>
                         <outlet property="teacherCourseLabel" destination="H6I-qI-eTb" id="pxm-yR-Su8"/>
                         <outlet property="titleCourseLabel" destination="lEn-5f-pSy" id="gdp-sa-vv8"/>
