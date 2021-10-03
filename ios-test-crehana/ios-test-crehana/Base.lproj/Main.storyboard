@@ -168,38 +168,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sta-rD-Vb1" userLabel="Video View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pause" translatesAutoresizingMaskIntoConstraints="NO" id="qUk-As-qd5">
-                                        <rect key="frame" x="171.5" y="89.5" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Oa0-yx-i7f"/>
-                                            <constraint firstAttribute="width" constant="32" id="YEc-0u-NpK"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back15" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Ig-wWF">
-                                        <rect key="frame" x="107.5" y="94.5" width="24" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21.75" id="26E-gw-X6p"/>
-                                            <constraint firstAttribute="width" constant="24" id="3NZ-qU-Qx2"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward15" translatesAutoresizingMaskIntoConstraints="NO" id="ubz-6G-1DA">
-                                        <rect key="frame" x="243.5" y="94.5" width="24" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21.75" id="FXC-Xe-AYu"/>
-                                            <constraint firstAttribute="width" constant="24" id="Jyf-oj-O9Y"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="qUk-As-qd5" firstAttribute="centerY" secondItem="Sta-rD-Vb1" secondAttribute="centerY" id="07W-YH-XCw"/>
                                     <constraint firstAttribute="height" constant="211" id="4ia-oi-GMm"/>
-                                    <constraint firstItem="qUk-As-qd5" firstAttribute="centerX" secondItem="Sta-rD-Vb1" secondAttribute="centerX" id="6FG-Sd-LZa"/>
-                                    <constraint firstItem="ubz-6G-1DA" firstAttribute="centerY" secondItem="Sta-rD-Vb1" secondAttribute="centerY" id="7zk-VN-ejf"/>
-                                    <constraint firstItem="d4z-Ig-wWF" firstAttribute="centerY" secondItem="Sta-rD-Vb1" secondAttribute="centerY" id="Rcx-xg-HZX"/>
-                                    <constraint firstItem="ubz-6G-1DA" firstAttribute="leading" secondItem="qUk-As-qd5" secondAttribute="trailing" constant="40" id="awV-A2-4wF"/>
-                                    <constraint firstItem="qUk-As-qd5" firstAttribute="leading" secondItem="d4z-Ig-wWF" secondAttribute="trailing" constant="40" id="m7c-Ro-Vga"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eov-nH-Zus" userLabel="Detail Course View">
@@ -305,11 +276,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back15" width="24.5" height="24"/>
         <image name="error-500" width="214" height="178.5"/>
         <image name="error-close" width="17" height="17"/>
-        <image name="forward15" width="24.5" height="24"/>
-        <image name="pause" width="32.5" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

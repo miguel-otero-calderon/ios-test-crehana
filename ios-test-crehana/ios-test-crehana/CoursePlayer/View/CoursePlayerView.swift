@@ -20,7 +20,7 @@ class CoursePlayerView: UIViewController {
     var viewModel: CoursePlayerViewModelProtocol = CoursePlayerViewModel(service: CoursePlayerService())
     var lessons: [CoursePlayerLesson] = []
     var course: Course?
-    @objc dynamic var player: AVPlayer?
+    var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     var isPlaying = false
     
@@ -60,7 +60,19 @@ class CoursePlayerView: UIViewController {
         pauseButton.centerXAnchor.constraint(equalTo: videoView.centerXAnchor).isActive = true
         pauseButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
         pauseButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
-        pauseButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        pauseButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        
+        controlsVideoView.addSubview(backButton)
+        backButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
+        backButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: pauseButton.leadingAnchor, constant: -60).isActive = true
+        
+        controlsVideoView.addSubview(forwardButton)
+        forwardButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        forwardButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
+        forwardButton.centerYAnchor.constraint(equalTo: videoView.centerYAnchor).isActive = true
+        forwardButton.trailingAnchor.constraint(equalTo: pauseButton.trailingAnchor, constant: 60).isActive = true
     }
     
     lazy var pauseButton: UIButton = {
@@ -74,6 +86,56 @@ class CoursePlayerView: UIViewController {
         button.addTarget(self, action: #selector(pauseAction), for: .touchUpInside)
         return button
     }()
+    
+    lazy var backButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "back15")
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.isHidden = true
+        
+        button.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var forwardButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "forward15")
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.isHidden = true
+        
+        button.addTarget(self, action: #selector(forwardAction), for: .touchUpInside)
+        return button
+    }()
+  
+    @objc func forwardAction() {
+        guard let duration = player?.currentItem?.duration else {
+            return
+        }
+        let currenTime = CMTimeGetSeconds(player.currentTime())
+        let newTime = currenTime + 15.0
+        
+        let totalSeconds = CMTimeGetSeconds(duration) - 15.0
+        if newTime < totalSeconds {
+            let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
+            player.seek(to: time)
+        }
+    }
+    
+    @objc func backAction() {
+        let currenTime = CMTimeGetSeconds(player.currentTime())
+        var newTime = currenTime - 15.0
+        
+        if newTime < 0 {
+            newTime = 0
+        }
+        
+        let time: CMTime = CMTimeMake(value: Int64(newTime*1000), timescale: 1000)
+        player.seek(to: time)
+    }
     
     @objc func pauseAction() {
         if isPlaying {
@@ -96,6 +158,8 @@ class CoursePlayerView: UIViewController {
         if keyPath == "currentItem.loadedTimeRanges" {
             controlsVideoView.backgroundColor = .clear
             pauseButton.isHidden = false
+            backButton.isHidden = false
+            forwardButton.isHidden = false
             isPlaying = true
         }
     }
