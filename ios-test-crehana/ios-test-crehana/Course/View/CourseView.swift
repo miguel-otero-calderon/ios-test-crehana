@@ -17,7 +17,6 @@ class CourseView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         self.tableView.register(
             UINib(nibName: "CourseTableViewCell", bundle: nil),
@@ -59,7 +58,6 @@ extension CourseView: CourseViewModelDelegate {
             self.courses = courses
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.tableView.isHidden = false
             }
         }
     }
@@ -93,7 +91,7 @@ extension CourseView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let course = self.courses[indexPath.row]        
+        let course = self.courses[indexPath.row]
         DispatchQueue.main.async {
             let coursePlayerView = self.storyboard?.instantiateViewController(withIdentifier: "CoursePlayerView") as! CoursePlayerView
             coursePlayerView.course = course
