@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C14B634270843F300AC7FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B633270843F300AC7FFB /* AppDelegate.swift */; };
+		4C14B636270843F300AC7FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B635270843F300AC7FFB /* SceneDelegate.swift */; };
+		4C14B638270843F300AC7FFB /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C14B637270843F300AC7FFB /* CourseView.swift */; };
+		4C14B63B270843F300AC7FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B639270843F300AC7FFB /* Main.storyboard */; };
+		4C14B63D270843F500AC7FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B63C270843F500AC7FFB /* Assets.xcassets */; };
+		4C14B640270843F500AC7FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C14B63E270843F500AC7FFB /* LaunchScreen.storyboard */; };
+		4C21A6E427084CB000FF5567 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6E327084CB000FF5567 /* EndPoint.swift */; };
+		4C21A6E727084D3500FF5567 /* CourseEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6E627084D3500FF5567 /* CourseEndPoint.swift */; };
+		4C21A6E927084E0800FF5567 /* CourseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6E827084E0800FF5567 /* CourseRequest.swift */; };
+		4C21A6EB27084EA000FF5567 /* CourseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6EA27084EA000FF5567 /* CourseResponse.swift */; };
+		4C21A6ED27084EF500FF5567 /* CourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6EC27084EF500FF5567 /* CourseService.swift */; };
+		4C21A6F02708521900FF5567 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6EF2708521900FF5567 /* UiViewController+Extension.swift */; };
+		4C21A6F3270852EF00FF5567 /* ScreenErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6F2270852EF00FF5567 /* ScreenErrorView.swift */; };
+		4C21A6F52708530D00FF5567 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21A6F42708530D00FF5567 /* MyError.swift */; };
+		4CFAB9C8270874CF00508799 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9C7270874CF00508799 /* Course.swift */; };
+		4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9C9270877FE00508799 /* CourseViewModel.swift */; };
+		4CFAB9CD27088C9000508799 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9CB27088C9000508799 /* CourseTableViewCell.swift */; };
+		4CFAB9CE27088C9000508799 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFAB9CC27088C9000508799 /* CourseTableViewCell.xib */; };
+		4CFAB9D527090B6D00508799 /* CoursePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */; };
+		4CFAB9D727090BB500508799 /* CoursePlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */; };
+		4CFAB9DA27090D8400508799 /* CoursePlayerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */; };
+		4CFAB9DC27090FCD00508799 /* CoursePlayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */; };
+		4CFAB9DE27090FF600508799 /* CoursePlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */; };
+		4CFAB9E02709103C00508799 /* CoursePlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */; };
+		4CFAB9E22709126400508799 /* CoursePlayerLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */; };
+		4CFAB9E52709286A00508799 /* CoursePlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFAB9E32709286A00508799 /* CoursePlayerTableViewCell.swift */; };
+		4CFAB9E62709286A00508799 /* CoursePlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFAB9E42709286A00508799 /* CoursePlayerTableViewCell.xib */; };
+		4D549C5EB32B88B4F5098BE2 /* Pods_ios_test_crehana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15F7C7671DEADA5E7CF09A10 /* Pods-ios-test-crehana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-test-crehana.debug.xcconfig"; path = "Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana.debug.xcconfig"; sourceTree = "<group>"; };
+		4C14B630270843F300AC7FFB /* ios-test-crehana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-test-crehana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C14B633270843F300AC7FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C14B635270843F300AC7FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4C14B637270843F300AC7FFB /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		4C14B63A270843F300AC7FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C14B63C270843F500AC7FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C14B63F270843F500AC7FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C14B641270843F500AC7FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C21A6E327084CB000FF5567 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		4C21A6E627084D3500FF5567 /* CourseEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseEndPoint.swift; sourceTree = "<group>"; };
+		4C21A6E827084E0800FF5567 /* CourseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRequest.swift; sourceTree = "<group>"; };
+		4C21A6EA27084EA000FF5567 /* CourseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResponse.swift; sourceTree = "<group>"; };
+		4C21A6EC27084EF500FF5567 /* CourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseService.swift; sourceTree = "<group>"; };
+		4C21A6EF2708521900FF5567 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
+		4C21A6F2270852EF00FF5567 /* ScreenErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenErrorView.swift; sourceTree = "<group>"; };
+		4C21A6F42708530D00FF5567 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
+		4CFAB9C7270874CF00508799 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		4CFAB9C9270877FE00508799 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		4CFAB9CB27088C9000508799 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		4CFAB9CC27088C9000508799 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
+		4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerView.swift; sourceTree = "<group>"; };
+		4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerViewModel.swift; sourceTree = "<group>"; };
+		4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerEndPoint.swift; sourceTree = "<group>"; };
+		4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerRequest.swift; sourceTree = "<group>"; };
+		4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerResponse.swift; sourceTree = "<group>"; };
+		4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerService.swift; sourceTree = "<group>"; };
+		4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerLesson.swift; sourceTree = "<group>"; };
+		4CFAB9E32709286A00508799 /* CoursePlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayerTableViewCell.swift; sourceTree = "<group>"; };
+		4CFAB9E42709286A00508799 /* CoursePlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoursePlayerTableViewCell.xib; sourceTree = "<group>"; };
+		CE5399A55F935F9A122E8675 /* Pods-ios-test-crehana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-test-crehana.release.xcconfig"; path = "Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana.release.xcconfig"; sourceTree = "<group>"; };
+		FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_test_crehana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C14B62D270843F300AC7FFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D549C5EB32B88B4F5098BE2 /* Pods_ios_test_crehana.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C14B627270843F300AC7FFB = {
+			isa = PBXGroup;
+			children = (
+				4C14B632270843F300AC7FFB /* ios-test-crehana */,
+				4C14B631270843F300AC7FFB /* Products */,
+				92ED77B6B4E0568A2293D3AE /* Pods */,
+				814DBE6BA7743846930A411F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C14B631270843F300AC7FFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C14B630270843F300AC7FFB /* ios-test-crehana.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C14B632270843F300AC7FFB /* ios-test-crehana */ = {
+			isa = PBXGroup;
+			children = (
+				4C14B633270843F300AC7FFB /* AppDelegate.swift */,
+				4C14B635270843F300AC7FFB /* SceneDelegate.swift */,
+				4CFAB9C327086D7100508799 /* Course */,
+				4CFAB9D02709023D00508799 /* CoursePlayer */,
+				4C21A6F12708523100FF5567 /* ScreenError */,
+				4C21A6EE2708520900FF5567 /* Extension */,
+				4C21A6E127084C6800FF5567 /* Networking */,
+				4C14B639270843F300AC7FFB /* Main.storyboard */,
+				4C14B63C270843F500AC7FFB /* Assets.xcassets */,
+				4C14B63E270843F500AC7FFB /* LaunchScreen.storyboard */,
+				4C14B641270843F500AC7FFB /* Info.plist */,
+			);
+			path = "ios-test-crehana";
+			sourceTree = "<group>";
+		};
+		4C21A6E127084C6800FF5567 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4C21A6E527084D0100FF5567 /* Course */,
+				4CFAB9D827090D5B00508799 /* CoursePlayer */,
+				4C21A6E227084CA300FF5567 /* EndPoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4C21A6E227084CA300FF5567 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				4C21A6E327084CB000FF5567 /* EndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		4C21A6E527084D0100FF5567 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				4C21A6E627084D3500FF5567 /* CourseEndPoint.swift */,
+				4C21A6E827084E0800FF5567 /* CourseRequest.swift */,
+				4C21A6EA27084EA000FF5567 /* CourseResponse.swift */,
+				4C21A6EC27084EF500FF5567 /* CourseService.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		4C21A6EE2708520900FF5567 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C21A6EF2708521900FF5567 /* UiViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4C21A6F12708523100FF5567 /* ScreenError */ = {
+			isa = PBXGroup;
+			children = (
+				4C21A6F2270852EF00FF5567 /* ScreenErrorView.swift */,
+				4C21A6F42708530D00FF5567 /* MyError.swift */,
+			);
+			path = ScreenError;
+			sourceTree = "<group>";
+		};
+		4CFAB9C327086D7100508799 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C42708748000508799 /* View */,
+				4CFAB9C6270874A600508799 /* Model */,
+				4CFAB9C52708749300508799 /* ViewModel */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		4CFAB9C42708748000508799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C14B637270843F300AC7FFB /* CourseView.swift */,
+				4CFAB9CB27088C9000508799 /* CourseTableViewCell.swift */,
+				4CFAB9CC27088C9000508799 /* CourseTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CFAB9C52708749300508799 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C9270877FE00508799 /* CourseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4CFAB9C6270874A600508799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9C7270874CF00508799 /* Course.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CFAB9D02709023D00508799 /* CoursePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D32709028600508799 /* View */,
+				4CFAB9D22709027600508799 /* Model */,
+				4CFAB9D12709026D00508799 /* ViewModel */,
+			);
+			path = CoursePlayer;
+			sourceTree = "<group>";
+		};
+		4CFAB9D12709026D00508799 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D627090BB500508799 /* CoursePlayerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4CFAB9D22709027600508799 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9E12709126400508799 /* CoursePlayerLesson.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CFAB9D32709028600508799 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D427090B6D00508799 /* CoursePlayerView.swift */,
+				4CFAB9E32709286A00508799 /* CoursePlayerTableViewCell.swift */,
+				4CFAB9E42709286A00508799 /* CoursePlayerTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CFAB9D827090D5B00508799 /* CoursePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4CFAB9D927090D8400508799 /* CoursePlayerEndPoint.swift */,
+				4CFAB9DB27090FCD00508799 /* CoursePlayerRequest.swift */,
+				4CFAB9DD27090FF600508799 /* CoursePlayerResponse.swift */,
+				4CFAB9DF2709103C00508799 /* CoursePlayerService.swift */,
+			);
+			path = CoursePlayer;
+			sourceTree = "<group>";
+		};
+		814DBE6BA7743846930A411F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB3CD9A06B1FF2216D09CB30 /* Pods_ios_test_crehana.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92ED77B6B4E0568A2293D3AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15F7C7671DEADA5E7CF09A10 /* Pods-ios-test-crehana.debug.xcconfig */,
+				CE5399A55F935F9A122E8675 /* Pods-ios-test-crehana.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C14B62F270843F300AC7FFB /* ios-test-crehana */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C14B644270843F500AC7FFB /* Build configuration list for PBXNativeTarget "ios-test-crehana" */;
+			buildPhases = (
+				72016717018A70C2AA397B93 /* [CP] Check Pods Manifest.lock */,
+				4C14B62C270843F300AC7FFB /* Sources */,
+				4C14B62D270843F300AC7FFB /* Frameworks */,
+				4C14B62E270843F300AC7FFB /* Resources */,
+				98F0B552CD33FE1DAB3658E2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-test-crehana";
+			productName = "ios-test-crehana";
+			productReference = 4C14B630270843F300AC7FFB /* ios-test-crehana.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C14B628270843F300AC7FFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					4C14B62F270843F300AC7FFB = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 4C14B62B270843F300AC7FFB /* Build configuration list for PBXProject "ios-test-crehana" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C14B627270843F300AC7FFB;
+			productRefGroup = 4C14B631270843F300AC7FFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C14B62F270843F300AC7FFB /* ios-test-crehana */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C14B62E270843F300AC7FFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFAB9CE27088C9000508799 /* CourseTableViewCell.xib in Resources */,
+				4C14B640270843F500AC7FFB /* LaunchScreen.storyboard in Resources */,
+				4C14B63D270843F500AC7FFB /* Assets.xcassets in Resources */,
+				4CFAB9E62709286A00508799 /* CoursePlayerTableViewCell.xib in Resources */,
+				4C14B63B270843F300AC7FFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72016717018A70C2AA397B93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-test-crehana-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98F0B552CD33FE1DAB3658E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios-test-crehana/Pods-ios-test-crehana-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C14B62C270843F300AC7FFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CFAB9D727090BB500508799 /* CoursePlayerViewModel.swift in Sources */,
+				4CFAB9C8270874CF00508799 /* Course.swift in Sources */,
+				4C21A6ED27084EF500FF5567 /* CourseService.swift in Sources */,
+				4CFAB9E02709103C00508799 /* CoursePlayerService.swift in Sources */,
+				4CFAB9DE27090FF600508799 /* CoursePlayerResponse.swift in Sources */,
+				4CFAB9D527090B6D00508799 /* CoursePlayerView.swift in Sources */,
+				4CFAB9CA270877FE00508799 /* CourseViewModel.swift in Sources */,
+				4C21A6E927084E0800FF5567 /* CourseRequest.swift in Sources */,
+				4C14B638270843F300AC7FFB /* CourseView.swift in Sources */,
+				4CFAB9E52709286A00508799 /* CoursePlayerTableViewCell.swift in Sources */,
+				4CFAB9DC27090FCD00508799 /* CoursePlayerRequest.swift in Sources */,
+				4C21A6E727084D3500FF5567 /* CourseEndPoint.swift in Sources */,
+				4CFAB9DA27090D8400508799 /* CoursePlayerEndPoint.swift in Sources */,
+				4CFAB9CD27088C9000508799 /* CourseTableViewCell.swift in Sources */,
+				4C14B634270843F300AC7FFB /* AppDelegate.swift in Sources */,
+				4C21A6EB27084EA000FF5567 /* CourseResponse.swift in Sources */,
+				4C21A6F52708530D00FF5567 /* MyError.swift in Sources */,
+				4C21A6E427084CB000FF5567 /* EndPoint.swift in Sources */,
+				4CFAB9E22709126400508799 /* CoursePlayerLesson.swift in Sources */,
+				4C21A6F3270852EF00FF5567 /* ScreenErrorView.swift in Sources */,
+				4C14B636270843F300AC7FFB /* SceneDelegate.swift in Sources */,
+				4C21A6F02708521900FF5567 /* UiViewController+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C14B639270843F300AC7FFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C14B63A270843F300AC7FFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C14B63E270843F500AC7FFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C14B63F270843F500AC7FFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C14B642270843F500AC7FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C14B643270843F500AC7FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C14B645270843F500AC7FFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15F7C7671DEADA5E7CF09A10 /* Pods-ios-test-crehana.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGHBCD3B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-test-crehana/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miguel.otero.ios-test-crehana.ios-test-crehana";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C14B646270843F500AC7FFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE5399A55F935F9A122E8675 /* Pods-ios-test-crehana.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JGHBCD3B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ios-test-crehana/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miguel.otero.ios-test-crehana.ios-test-crehana";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C14B62B270843F300AC7FFB /* Build configuration list for PBXProject "ios-test-crehana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C14B642270843F500AC7FFB /* Debug */,
+				4C14B643270843F500AC7FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C14B644270843F500AC7FFB /* Build configuration list for PBXNativeTarget "ios-test-crehana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C14B645270843F500AC7FFB /* Debug */,
+				4C14B646270843F500AC7FFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C14B628270843F300AC7FFB /* Project object */;
+}
