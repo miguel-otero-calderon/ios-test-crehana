@@ -56,6 +56,33 @@ class CoursePlayerView: UIViewController {
         pauseAction()
     }
     
+    func addTimeObserver() {
+        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { [weak self] time in
+            guard let currentItem = self?.player.currentItem else {
+                return
+            }
+            if currentItem.duration.value <= 0 {
+                return
+            }
+            self?.videoSlider.maximumValue = Float(currentItem.duration.seconds)
+            self?.videoSlider.minimumValue = 0
+            self?.videoSlider.value = Float(currentItem.currentTime().seconds)
+            
+            if let currenTime = self?.player.currentTime() {
+                if let duration = self?.player.currentItem?.duration {
+                    guard let ini = self?.getTimeString(time: currenTime) else {
+                        return
+                    }
+                    guard let end = self?.getTimeString(time: duration) else {
+                        return
+                    }
+                    self?.videoLengthLabel.text = "\(ini) / \(end)"
+                }
+            }
+        }
+    }
+    
     lazy var pauseButton: UIButton = {
         let button = UIButton(type: .system)
         let image = UIImage(named: "pause")
@@ -117,12 +144,7 @@ class CoursePlayerView: UIViewController {
   
     @objc func sliderChangeValued() {
         if let duration = player.currentItem?.duration {
-            let totalSeconds = CMTimeGetSeconds(duration)
-            let value = Float64(videoSlider.value)*totalSeconds
-            let seekTime = CMTime(value: Int64(value), timescale: 1)
-            player.seek(to: seekTime) { seekBool in
-                
-            }
+            player.seek(to: CMTimeMake(value: Int64(videoSlider.value*1000), timescale: 1000))
         }
     }
     
@@ -288,6 +310,8 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
             
             self.player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: [.new], context: nil)
             
+            self.addTimeObserver()
+            
             self.controlsVideoView.frame = self.videoView.frame
             self.videoView.addSubview(self.controlsVideoView)
             
@@ -320,7 +344,7 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
             
             self.controlsVideoView.addSubview(self.videoSlider)
             self.videoSlider.bottomAnchor.constraint(equalTo: self.videoView.bottomAnchor).isActive = true
-            self.videoSlider.leftAnchor.constraint(equalTo: self.videoLengthLabel.rightAnchor, constant: -140).isActive = true
+            self.videoSlider.leftAnchor.constraint(equalTo: self.videoLengthLabel.rightAnchor, constant: -150).isActive = true
             self.videoSlider.rightAnchor.constraint(equalTo: self.videoLengthLabel.rightAnchor, constant: +220).isActive = true
             self.videoSlider.heightAnchor.constraint(equalToConstant: 4).isActive = true
             
@@ -367,5 +391,6 @@ extension CoursePlayerView: UITableViewDelegate {
         pauseButton.isHidden = true
         forwardButton.isHidden = true
         backButton.isHidden = true
+        videoSlider.value = 0
     }
 }
