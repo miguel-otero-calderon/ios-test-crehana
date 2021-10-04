@@ -103,7 +103,38 @@ class CoursePlayerView: UIViewController {
         button.addTarget(self, action: #selector(goBackAction), for: .touchUpInside)
         return button
     }()
+    
+    lazy var videoSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.minimumTrackTintColor = UIColor(red: 0.043, green: 0.831, blue: 0.757, alpha: 1)
+        slider.maximumTrackTintColor = .white
+        slider.setThumbImage(UIImage(named: "circle"), for: .normal)
+        slider.isHidden = false
+        slider.addTarget(self, action: #selector(sliderChangeValued), for: .valueChanged)
+        return slider
+    }()
   
+    @objc func sliderChangeValued() {
+        if let duration = player.currentItem?.duration {
+            let totalSeconds = CMTimeGetSeconds(duration)
+            let value = Float64(videoSlider.value)*totalSeconds
+            let seekTime = CMTime(value: Int64(value), timescale: 1)
+            player.seek(to: seekTime) { seekBool in
+                
+            }
+        }
+    }
+    
+    let videoLengthLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "00:00"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        return label
+    }()
+    
     @objc func forwardAction() {
         guard let duration = player?.currentItem?.duration else {
             return
@@ -165,10 +196,20 @@ class CoursePlayerView: UIViewController {
             controlsVideoView.backgroundColor = .clear
             goBackButton.isHidden = false
             isPlaying = true
+            
+            let currenTime = player.currentTime()
+            if let duration = player.currentItem?.duration {
+                let ini = getTimeString(time: currenTime)
+                let end = getTimeString(time: duration)
+                self.videoLengthLabel.text = "\(ini) / \(end)"
+            }
         }
     }
     
     func getTimeString(time: CMTime) -> String {
+        if time.value <= 0 {
+            return "00:00"
+        }
         let cmTimeGetSeconds = CMTimeGetSeconds(time)
         let hours = Int(cmTimeGetSeconds/3600)
         let minutes = Int(cmTimeGetSeconds/60) % 60
@@ -271,6 +312,17 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
             self.controlsVideoView.addSubview(self.goBackButton)
             self.goBackButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
             self.goBackButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            
+            self.controlsVideoView.addSubview(self.videoLengthLabel)
+            self.videoLengthLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
+            self.videoLengthLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
+            self.videoLengthLabel.bottomAnchor.constraint(equalTo: self.videoView.bottomAnchor).isActive = true
+            
+            self.controlsVideoView.addSubview(self.videoSlider)
+            self.videoSlider.bottomAnchor.constraint(equalTo: self.videoView.bottomAnchor).isActive = true
+            self.videoSlider.leftAnchor.constraint(equalTo: self.videoLengthLabel.rightAnchor, constant: -140).isActive = true
+            self.videoSlider.rightAnchor.constraint(equalTo: self.videoLengthLabel.rightAnchor, constant: +220).isActive = true
+            self.videoSlider.heightAnchor.constraint(equalToConstant: 4).isActive = true
             
             self.tableView.reloadData()
         }
