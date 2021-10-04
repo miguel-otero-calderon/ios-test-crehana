@@ -22,6 +22,6 @@ class CoursePlayerTableViewCell: UITableViewCell {
     
     func configure(lesson: CoursePlayerLesson) {
         self.lessonTitleLabel.text = lesson.title
-        self.detailLessonLabel.text = lesson.url
+        self.detailLessonLabel.text = "3m 30s (10MB)"
     }
 }

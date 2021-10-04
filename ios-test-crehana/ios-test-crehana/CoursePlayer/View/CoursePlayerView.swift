@@ -299,6 +299,9 @@ extension CoursePlayerView: UITableViewDataSource {
 }
 
 extension CoursePlayerView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 38
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
