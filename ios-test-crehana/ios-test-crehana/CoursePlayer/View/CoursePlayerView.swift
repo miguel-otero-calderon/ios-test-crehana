@@ -41,6 +41,19 @@ class CoursePlayerView: UIViewController {
         let request = CoursePlayerRequest(courseId: course.id)
         viewModel.getLessons(request: request)
         configure()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchHappen))
+        videoView.isUserInteractionEnabled = true
+        videoView.addGestureRecognizer(tap)
+    }
+    
+    @objc func touchHappen() {
+        
+        pauseButton.isHidden = !pauseButton.isHidden
+        backButton.isHidden = !backButton.isHidden
+        forwardButton.isHidden = !forwardButton.isHidden
+    
+        pauseAction()
     }
     
     lazy var pauseButton: UIButton = {
@@ -124,6 +137,13 @@ class CoursePlayerView: UIViewController {
         } else {
             player?.play()
             pauseButton.setImage(UIImage(named: "pause"), for: .normal)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.pauseButton.isHidden = true
+                self.backButton.isHidden = true
+                self.forwardButton.isHidden = true
+            }
+            
         }
         isPlaying = !isPlaying
     }
@@ -143,9 +163,6 @@ class CoursePlayerView: UIViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "currentItem.loadedTimeRanges" {
             controlsVideoView.backgroundColor = .clear
-            pauseButton.isHidden = false
-            backButton.isHidden = false
-            forwardButton.isHidden = false
             goBackButton.isHidden = false
             isPlaying = true
         }
@@ -289,7 +306,11 @@ extension CoursePlayerView: UITableViewDelegate {
         let url = URL(string: lesson.url)
         let playerItem = AVPlayerItem(url: url!)
         player.replaceCurrentItem(with: playerItem)
-        player.play()
+        isPlaying = false
+        pauseAction()
         
+        pauseButton.isHidden = true
+        forwardButton.isHidden = true
+        backButton.isHidden = true
     }
 }
