@@ -161,7 +161,7 @@
         <!--Course Player View-->
         <scene sceneID="SiF-hJ-bv2">
             <objects>
-                <viewController storyboardIdentifier="CoursePlayerView" id="aPp-g0-nv7" customClass="CoursePlayerView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CoursePlayerView" modalPresentationStyle="overCurrentContext" id="aPp-g0-nv7" customClass="CoursePlayerView" customModule="ios_test_crehana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNU-4u-gGS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

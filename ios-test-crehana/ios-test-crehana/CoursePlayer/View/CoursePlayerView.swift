@@ -78,6 +78,18 @@ class CoursePlayerView: UIViewController {
         button.addTarget(self, action: #selector(forwardAction), for: .touchUpInside)
         return button
     }()
+    
+    lazy var goBackButton: UIButton = {
+        let button = UIButton(type: .system)
+        let image = UIImage(named: "goBack")
+        button.setImage(image, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        button.isHidden = true
+        
+        button.addTarget(self, action: #selector(goBackAction), for: .touchUpInside)
+        return button
+    }()
   
     @objc func forwardAction() {
         guard let duration = player?.currentItem?.duration else {
@@ -116,6 +128,12 @@ class CoursePlayerView: UIViewController {
         isPlaying = !isPlaying
     }
     
+    @objc func goBackAction() {
+        self.dismiss(animated: true) {
+            self.player.replaceCurrentItem(with: nil)
+        }
+    }
+    
     let controlsVideoView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 1)
@@ -128,6 +146,7 @@ class CoursePlayerView: UIViewController {
             pauseButton.isHidden = false
             backButton.isHidden = false
             forwardButton.isHidden = false
+            goBackButton.isHidden = false
             isPlaying = true
         }
     }
@@ -196,6 +215,7 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
         guard let url = URL(string: self.lessons[0].url) else {
             return
         }
+        print("courseId: \(self.lessons[0].courseId) , title: \(self.lessons[0].title), url: \(url)")
         
         DispatchQueue.main.async {
 
@@ -230,6 +250,10 @@ extension CoursePlayerView: CoursePlayerViewModelDelegate {
             self.forwardButton.heightAnchor.constraint(equalToConstant: 21.75).isActive = true
             self.forwardButton.centerYAnchor.constraint(equalTo: self.videoView.centerYAnchor).isActive = true
             self.forwardButton.trailingAnchor.constraint(equalTo: self.pauseButton.trailingAnchor, constant: 60).isActive = true
+
+            self.controlsVideoView.addSubview(self.goBackButton)
+            self.goBackButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+            self.goBackButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
             
             self.tableView.reloadData()
         }

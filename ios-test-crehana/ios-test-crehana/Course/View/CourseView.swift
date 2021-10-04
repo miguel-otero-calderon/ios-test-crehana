@@ -95,7 +95,8 @@ extension CourseView: UITableViewDelegate {
         DispatchQueue.main.async {
             let coursePlayerView = self.storyboard?.instantiateViewController(withIdentifier: "CoursePlayerView") as! CoursePlayerView
             coursePlayerView.course = course
-            self.navigationController?.pushViewController(coursePlayerView, animated: true)
+            
+            self.present(coursePlayerView, animated: true, completion: nil)
         }
     }
 }
